@@ -10,7 +10,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	</http:listener-config>
 	<flow name="cicd-appFlow" doc:id="13239f56-46f0-45b3-a5a9-9f30bd6f097a" >
 		<http:listener doc:name="Listener" doc:id="7348ab1d-8bfd-4867-a7ad-a298f67d7b48" config-ref="HTTP_Listener_config" path="/CICD"/>
-		<set-payload value='#[output application/json&#10;---&#10;{"status":"200",&#10;"Message": "CICD SUCESSFULLY DEPLOED."&#10;}&#10;}]' doc:name="Set Payload" doc:id="69caaaac-ac09-40c2-be43-406f8f94056e" />
+		<set-payload value='#[output application/json&#10;---&#10;{&#10;"Message": "CICD SUCESSFULLY DEPLOED."&#10;}]' doc:name="Set Payload" doc:id="69caaaac-ac09-40c2-be43-406f8f94056e" />
 		<logger level="INFO" doc:name="Logger" doc:id="ee74d9a6-84c3-4826-a2c7-e0cf06fed51d" message="#[payload]"/>
 	</flow>
 </mule>
